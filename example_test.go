@@ -5,18 +5,18 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/a8m/entspatial/ent/location"
+	"github.com/wonderfate/ent-test-spatial/ent/location"
 
-	"github.com/a8m/entspatial/ent"
-	"github.com/a8m/entspatial/ent/schema"
+	"github.com/wonderfate/ent-test-spatial/ent"
+	"github.com/wonderfate/ent-test-spatial/ent/schema"
 
 	"entgo.io/ent/dialect"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func Example_Point() {
-	host, port := "localhost", 3308
-	client, err := ent.Open(dialect.MySQL, fmt.Sprintf("root:pass@tcp(%s:%d)/test?parseTime=True", host, port))
+	host, port := "mysql8", 3306
+	client, err := ent.Open(dialect.MySQL, fmt.Sprintf("root:rootsecret@tcp(%s:%d)/test?parseTime=True", host, port))
 	if err != nil {
 		log.Fatalf("failed opening connection to mysql: %v", err)
 	}
